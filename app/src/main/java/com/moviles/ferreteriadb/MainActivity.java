@@ -19,4 +19,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(Cliente);
     }
 
+   public void factura(View view){
+   Intent Factura = new Intent(this,FacturaActivity.class);
+   startActivity(Factura);
+}
+
+
+
 }
