@@ -19,6 +19,9 @@
        <activity
            android:name=".ClienteActivity"
            android:exported="false" />
+      <activity
+            android:name=".PedidoActivity"
+            android:exported="false" />
        <activity
            android:name=".MainActivity"
            android:exported="true">
