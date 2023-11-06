@@ -11,14 +11,14 @@
        android:id="@+id/textView21"
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
-       android:layout_marginTop="160dp"
-       android:text=" FACTURAS"
+       android:layout_marginTop="128dp"
+       android:text=" FACTURA"
        android:textColor="#191818"
        android:textSize="20sp"
        app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintHorizontal_bias="0.498"
        app:layout_constraintStart_toStartOf="parent"
        app:layout_constraintTop_toTopOf="parent" />
-
 
    <Button
        android:id="@+id/btnregistar2"
@@ -108,11 +108,63 @@
        app:layout_constraintTop_toTopOf="parent" />
 
 
+   <EditText
+       android:id="@+id/etCodigoPedido"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="332dp"
+       android:ems="10"
+       android:inputType="textPersonName"
+       android:textSize="14sp"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintHorizontal_bias="0.161"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent" />
+
+   <TextView
+       android:id="@+id/textView2"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="304dp"
+       android:text="Codigo pedido"
+       android:textColor="#191818"
+       android:textSize="20sp"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintHorizontal_bias="0.136"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent" />
+
+   <EditText
+       android:id="@+id/ettotal"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="500dp"
+       android:ems="10"
+       android:inputType="textPersonName"
+       android:textSize="14sp"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintHorizontal_bias="0.161"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent" />
+
+   <EditText
+       android:id="@+id/etfecha1"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="416dp"
+       android:ems="10"
+       android:inputType="textPersonName"
+       android:textSize="14sp"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintHorizontal_bias="0.161"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent" />
+
    <TextView
        android:id="@+id/textView24"
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
-       android:layout_marginTop="296dp"
+       android:layout_marginTop="388dp"
        android:text="Fecha"
        android:textColor="#191818"
        android:textSize="20sp"
@@ -121,45 +173,16 @@
        app:layout_constraintStart_toStartOf="parent"
        app:layout_constraintTop_toTopOf="parent" />
 
-
    <TextView
        android:id="@+id/textView22"
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
-       android:layout_marginTop="364dp"
-       android:text="Total de Factura"
+       android:layout_marginTop="468dp"
+       android:text="Total Factura"
        android:textColor="#191818"
        android:textSize="20sp"
        app:layout_constraintEnd_toEndOf="parent"
        app:layout_constraintHorizontal_bias="0.15"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toTopOf="parent" />
-
-
-   <EditText
-       android:id="@+id/ettotal"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:layout_marginTop="396dp"
-       android:ems="10"
-       android:inputType="textPersonName"
-       android:textSize="14sp"
-       app:layout_constraintEnd_toEndOf="parent"
-       app:layout_constraintHorizontal_bias="0.161"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toTopOf="parent" />
-
-
-   <EditText
-       android:id="@+id/etfecha1"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:layout_marginTop="324dp"
-       android:ems="10"
-       android:inputType="textPersonName"
-       android:textSize="14sp"
-       app:layout_constraintEnd_toEndOf="parent"
-       app:layout_constraintHorizontal_bias="0.161"
        app:layout_constraintStart_toStartOf="parent"
        app:layout_constraintTop_toTopOf="parent" />
 
@@ -188,7 +211,7 @@
        android:layout_marginEnd="76dp"
        android:backgroundTint="@color/black"
        android:onClick="menu"
-       android:text="Regresar"
+       android:text="Menu Principal"
        app:cornerRadius="20dp"
        app:layout_constraintBottom_toBottomOf="parent"
        app:layout_constraintEnd_toEndOf="parent"

@@ -23,7 +23,14 @@ public class MainActivity extends AppCompatActivity {
    Intent Factura = new Intent(this,FacturaActivity.class);
    startActivity(Factura);
 }
-
+    public void pedido(View view){
+        Intent Pedido = new Intent(this,PedidoActivity.class);
+        startActivity(Pedido);
+    }
+    public void producto(View view){
+        Intent Producto = new Intent(this,ProductoActivity.class);
+        startActivity(Producto);
+    }
 
 
 }
