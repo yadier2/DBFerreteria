@@ -27,7 +27,7 @@ public class PedidoActivity extends AppCompatActivity {
         etcd=findViewById(R.id.etCodigo);
         etd=findViewById(R.id.etdescripcion);
         etf=findViewById(R.id.etfecha);
-        etcn=findViewById(R.id.etcantidad);
+        etcn=findViewById(R.id.etanulado);
         etnitU=findViewById(R.id.etNitUsuario);
 
 
@@ -36,15 +36,19 @@ public class PedidoActivity extends AppCompatActivity {
         Intent Menu = new Intent(this,MainActivity.class);
         startActivity(Menu);
     }
+    public void agregarProducto(View view){
+        Intent PedidoLinea = new Intent(this,PedidoLineaActivity.class);
+        startActivity(PedidoLinea);
+    }
     public void registrar (View view){
 
         String codigo =etcd.getText().toString();
         String nitUsuario =etnitU.getText().toString();
         String descripcion =etd.getText().toString();
         String fecha =etf.getText().toString();
-        String cantidad =etcn.getText().toString();
+        String anulado =etcn.getText().toString();
 
-        if (!codigo.isEmpty() && !nitUsuario.isEmpty() && !descripcion.isEmpty() && !fecha.isEmpty() && !cantidad.isEmpty()){
+        if (!codigo.isEmpty() && !nitUsuario.isEmpty() && !descripcion.isEmpty() && !fecha.isEmpty() && !anulado.isEmpty()){
 
             ContentValues registro = new ContentValues();
 
@@ -52,7 +56,7 @@ public class PedidoActivity extends AppCompatActivity {
             registro.put("nit_usuario",nitUsuario);
             registro.put("descripcion",descripcion);
             registro.put("fecha",fecha);
-            registro.put("cantidad",cantidad);
+            registro.put("anulado",anulado);
 
             dbFereteria.abrirDB();
             dbFereteria.getWritableDatabase().insert("pedido",null,registro);
@@ -78,7 +82,7 @@ public class PedidoActivity extends AppCompatActivity {
 
         if(!codigo1.isEmpty()){
 
-            try (Cursor fill =  dbFereteria.getWritableDatabase().rawQuery("select nit_usuario,descripcion,fecha,cantidad from pedido where codigo=" + codigo1, null)) {
+            try (Cursor fill =  dbFereteria.getWritableDatabase().rawQuery("select nit_usuario,descripcion,fecha,anulado from pedido where codigo=" + codigo1, null)) {
 
                 if (fill.moveToFirst()) {
                     etnitU.setText(fill.getString(0));
@@ -100,9 +104,9 @@ public class PedidoActivity extends AppCompatActivity {
         String nitUsuario =etnitU.getText().toString();
         String descripcion =etd.getText().toString();
         String fecha =etf.getText().toString();
-        String cantidad =etcn.getText().toString();
+        String anulado =etcn.getText().toString();
 
-        if (!codigo.isEmpty() && !nitUsuario.isEmpty()  && !descripcion.isEmpty() && !fecha.isEmpty() && !cantidad.isEmpty()){
+        if (!codigo.isEmpty() && !nitUsuario.isEmpty()  && !descripcion.isEmpty() && !fecha.isEmpty() && !anulado.isEmpty()){
 
             ContentValues registro = new ContentValues();
 
@@ -110,7 +114,7 @@ public class PedidoActivity extends AppCompatActivity {
             registro.put("nit_usuario",nitUsuario);
             registro.put("descripcion",descripcion);
             registro.put("fecha",fecha);
-            registro.put("cantidad",cantidad);
+            registro.put("anulado",anulado);
 
             int fila= dbFereteria.getWritableDatabase().update("pedido",registro,"codigo="+codigo,null);
 

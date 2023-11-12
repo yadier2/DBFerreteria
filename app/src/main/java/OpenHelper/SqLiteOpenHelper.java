@@ -19,9 +19,11 @@ public class SqLiteOpenHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL("create table cliente(cedula integer primary key, nombre text, direccion text,telefono int)");
-        sqLiteDatabase.execSQL("create table pedido(codigo integer primary key autoincrement, nit_usuario integer not null, descripcion text, fecha text,cantidad int, foreign key (nit_usuario) references cliente (cedula))");
-        sqLiteDatabase.execSQL("create table factura(numero integer primary key autoincrement, fecha text, total text, id_pedido integer not null, foreign key (id_pedido) references pedido (codigo))");
+        sqLiteDatabase.execSQL("create table pedido(codigo integer primary key autoincrement, nit_usuario integer, descripcion text, fecha text,anulado text,CONSTRAINT fk_nitUsuario foreign key (nit_usuario) references cliente (cedula))");
+        sqLiteDatabase.execSQL("create table factura(numero integer primary key autoincrement, fecha text, total text, id_pedido integer ,CONSTRAINT fk_idPedido foreign key (id_pedido) references pedido (codigo))");
         sqLiteDatabase.execSQL("create table producto(codigo integer primary key, descripcion text, valor text)");
+        sqLiteDatabase.execSQL("create table pedidoLinea(codigo integer primary key autoincrement, codigo_pedido integer , cantidad int not null, codigo_producto integer , CONSTRAINT fk_codPedido foreign key (codigo_pedido) references pedido (codigo),CONSTRAINT fk_codProducto foreign key (codigo_producto) references producto (codigo))");
+
     }
 
     @Override
